@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Web Components</title>
     <link rel="stylesheet" href="./main.css" />
-    <script src="./main.js" type="module"></script>
-    <script src="./bigbang.js" type="module"></script>
     <script src="components/values-section.js" type="module"></script>
+    <script src="components/description/description-section.js" type="module"></script>
 
 
   </head>
@@ -19,15 +18,7 @@
     <main>
       <h2>Main Area</h2>
       <h3>Web Component Below</h3>
-      <big-bang>
-        <h2 slot="title">Characters</h2>
-        <ul slot="list">
-          <li>Leonard</li>
-          <li>Sheldon</li>
-          <li>Raj</li>
-          <li>Howard</li>
-        </ul>
-      </big-bang>
+      <description-section></description-section>
       <values-section></values-section>
     </main>
 
