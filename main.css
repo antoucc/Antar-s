@@ -12,14 +12,3 @@ html {
 }
 
 
-/********** Values Section **********/
-values-section {
-    height: 100vh;
-    width: 100vw;
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding-inline: 10rem;
-}
