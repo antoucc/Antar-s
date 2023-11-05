@@ -1,11 +1,56 @@
-import { DocumentLoader } from "../../services/document-loader.js";
+const template = document.createElement('template');
+template.innerHTML = `
+<style>
+    
+    #values-container {
+        height: 100vh;
+        padding-inline: 10%;
+        display: flex;
+        font-weight: 400;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .value {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        gap: 2rem;
+        font-family: GT-Haptik-Medium ,sans-serif;
+        line-height: 1.25;
+        color: #444;    
+        cursor: pointer;
+    }
+    
+    .value span {
+        opacity: 0;
+        margin-left: 1rem;
+        pointer-events: none;
+    }
+</style>
+<div id="values-container">
+    <h2>We specialize in</h2>
+    <p data-image="web" class="value">Développement Web<span>&#8594;</span></p>
+    <p data-image="mobile" class="value">Développement Logiciel<span>&#8594;</span></p>
+    <p data-image="mobile" class="value">Développement Mobile<span>&#8594;</span></p>
+    <p data-image="green" class="value">Marketing et Digitalisation<span>&#8594;</span></p>
+</div>
+`;
 
 class ValuesSection extends HTMLElement {
 
     constructor() {
         super();
-        const shadowRoot = this.attachShadow({mode: 'closed'});
-        DocumentLoader.loadCssHtml('/components/values/values-section', shadowRoot);
+        const shadowRoot = this.attachShadow({mode: 'open'});
+
+        let clone = template.content.cloneNode(true);
+        shadowRoot.append(clone);
     }
 
     connectedCallback() {
