@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Web Components</title>
     <link rel="stylesheet" href="./main.css" />
-    <script src="components/values/values-section.js" type="module"></script>
-    <script src="components/description/description-section.js" type="module"></script>
+    <script src="script/values-section.js" type="module"></script>
+    <script src="script/description-section.js" type="module"></script>
 
 
   </head>
@@ -18,7 +18,15 @@
     <main>
       <h2>Main Area</h2>
       <h3>Web Component Below</h3>
-      <description-section></description-section>
+
+      <div id="description-container" class="description-container flex-col-items-center justify-center">
+        <img data-value="2" src="/assets/images/common/Antares.svg" alt="ant" class="img mousemove">
+        <span data-value="-2" class="text-black text-center description-title mousemove">BIENVENUE CHEZ <strong>ANTARÈS</strong></span>
+        <p data-value="-3" class="main-text text-black text-center mousemove">Découvrez une expérience numérique exceptionnelle avec Antarès, votre partenaire de confiance pour le développement web et d'applications.</p>
+        <a data-value="6" id="services-link" class="mousemove">Vers nos services</a>
+        <a data-value="-6" id="portofolio-link" class="mousemove">Vers notre portofolio</a>
+      </div>
+
       <values-section></values-section>
     </main>
 
@@ -28,3 +36,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   </body>
 </html>
+
+
