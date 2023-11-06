@@ -17,14 +17,26 @@ template.innerHTML = `
         transition: all 0.3s ease-in-out;
     }
     
+    #values-container h2 {
+        font-size: .5rem;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        font-family: GT-Haptik-Medium,serif;
+        line-height: 1.25;
+        color: #444;
+    }
+    
     .value {
         display: flex;
         align-items: center;
         font-size: 1.5rem;
         font-weight: 500;
         margin: 0;
-        padding-block: 1rem;
-        font-family: GT-Haptik-Medium;
+        padding-block: 2rem;
+        font-family: GT-Haptik-Medium,serif;
         line-height: 1.25;
         color: #000;    
         cursor: pointer;
