@@ -13,18 +13,32 @@ template.innerHTML = `
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: #fff;
+        background-image: url(/assets/images/values/default.jpg);
         transition: all 0.3s ease-in-out;
+    }
+    
+    #values-container h2 {
+        font-size: .5rem;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        font-family: GT-Haptik-Medium,serif;
+        line-height: 1.25;
+        color: #444;
     }
     
     .value {
         display: flex;
         align-items: center;
         font-size: 1.5rem;
-        gap: 2rem;
-        font-family: GT-Haptik-Medium ,sans-serif;
+        font-weight: 500;
+        margin: 0;
+        padding-block: 2rem;
+        font-family: GT-Haptik-Medium,serif;
         line-height: 1.25;
-        color: #444;    
+        color: #000;    
         cursor: pointer;
     }
     
@@ -64,6 +78,8 @@ class ValuesSection extends HTMLElement {
     animateIn(element) {
         const arrow = element.querySelector('span');
         const valuesContainer = this.shadowRoot.querySelector('#values-container');
+        const values = this.shadowRoot.querySelectorAll('.value');
+        values.forEach(value => gsap.to(value, {x: 0, color: '#444'}));
         gsap.to(arrow, {opacity: 1, duration: 0.3});
         gsap.to(element, {x: 20, color: '#000'});
         gsap.to(valuesContainer, {
@@ -75,8 +91,11 @@ class ValuesSection extends HTMLElement {
 
     animateOut(element) {
         const arrow = element.querySelector('span');
+        const valuesContainer = this.shadowRoot.querySelector('#values-container');
+        const values = this.shadowRoot.querySelectorAll('.value');
+        values.forEach(value => gsap.to(value, {x: 0, color: '#000'}));
         gsap.to(arrow, { opacity: 0, duration: 0.3 });
-        gsap.to(element, {x: 0, color: '#444'});
+        gsap.to(element, {x: 0, color: '#000'});
     }
 }
 
