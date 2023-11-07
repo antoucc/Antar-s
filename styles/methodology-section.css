@@ -1,0 +1,28 @@
+#methodology-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    background-color: darkblue
+}
+
+#wave__container {
+    position: relative;
+}
+
+.city {
+    cursor: pointer;
+    /* Additional styling here */
+}
+
+.current {
+    /* Styling for the current city */
+}
+
+#line {
+    width: 100%; /* Full width of its container */
+    height: 100px; /* Set a fixed height */
+}
